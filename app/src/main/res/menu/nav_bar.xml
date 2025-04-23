@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="@string/nav_home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/profile"
+            android:title="@string/nav_profile" />
+        <item
+            android:id="@+id/nav_activity"
+            android:icon="@drawable/activity"
+            android:title="@string/nav_Activity" />
+        <item
+            android:id="@+id/nav_status"
+            android:icon="@drawable/status"
+            android:title="@string/status" />
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/report_img"
+            android:title="@string/nav_report_item" />
+        <item
+            android:id="@+id/nav_return"
+            android:icon="@drawable/found"
+            android:title="@string/nav_return_item" />
+
+    </group>
+</menu>

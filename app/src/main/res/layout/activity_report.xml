@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/report_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:background="@color/dark_green"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+            app:layout_constraintVertical_bias="1.0">
+
+            <include layout="@layout/bottom_toolbar" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <include
+            android:id="@+id/top"
+            layout="@layout/top_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="658dp"
+            android:layout_margin="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="9dp"
+            android:background="@drawable/cardviewdis1"
+            android:foregroundGravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/med_white">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/report_input_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_input_email"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="-9dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_toEndOf="@+id/contact_txt_r"
+                        android:autofillHints=""
+                        android:background="@drawable/info_box"
+                        android:ems="10"
+                        android:hint="@string/contact"
+                        android:importantForAutofill="no"
+                        android:inputType="phone"
+                        android:padding="5dp"
+                        android:paddingStart="22dp"
+                        android:paddingEnd="1dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                    <TextView
+                        android:id="@+id/report_itemtxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:foregroundGravity="center_vertical|center"
+                        android:gravity="center"
+                        android:text="@string/lost_item"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/contact_txt_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/email_txt_r"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/info_txt_box"
+                        android:padding="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="7dp"
+                        android:text="@string/contact"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+
+                    <EditText
+                        android:id="@+id/report_input_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/date_report"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="137dp"
+                        android:autofillHints=""
+                        android:background="@drawable/info_box"
+                        android:ems="10"
+                        android:hint="@string/dd_mm_yy"
+                        android:padding="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="1dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="LabelFor,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                    <TextView
+                        android:id="@+id/date_report"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_input_category"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="121dp"
+                        android:text="@string/date_that_you_lost_your_item"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/description_report"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_input_date"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="141dp"
+                        android:layout_marginTop="26dp"
+                        android:layout_marginEnd="29dp"
+                        android:text="@string/item_description"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/report_input_category"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_input_contact"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="51dp"
+                        android:layout_marginEnd="137dp"
+                        android:autofillHints=""
+                        android:background="@drawable/info_box"
+                        android:ems="10"
+                        android:hint="@string/category"
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="1dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                    <TextView
+                        android:id="@+id/category_report"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/contact_txt_r"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="31dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/category"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/report_input_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_itemtxt"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="-6dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="23dp"
+                        android:layout_toEndOf="@+id/name_txt_r"
+                        android:autofillHints=""
+                        android:background="@drawable/info_box"
+                        android:ems="10"
+                        android:hint="@string/name"
+                        android:inputType="text"
+                        android:padding="5dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="1dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                    <EditText
+                        android:id="@+id/report_input_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_input_name"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="-9dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_toEndOf="@+id/email_txt_r"
+                        android:background="@drawable/info_box"
+                        android:ems="10"
+                        android:hint="@string/email"
+                        android:inputType="text|textEmailAddress"
+                        android:padding="5dp"
+                        android:paddingStart="25dp"
+                        android:paddingEnd="1dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,DuplicateSpeakableTextCheck,LabelFor,TouchTargetSizeCheck,VisualLintTextFieldSize" />
+
+                    <TextView
+                        android:id="@+id/email_txt_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/name_txt_r"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/info_txt_box"
+                        android:padding="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="30dp"
+                        android:text="@string/email"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/name_txt_r"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/report_itemtxt"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/info_txt_box"
+                        android:padding="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="30dp"
+                        android:text="@string/name"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/report_image_view"
+                        android:layout_width="105dp"
+                        android:layout_height="105dp"
+                        android:layout_below="@+id/report_input_date"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="55dp"
+                        android:background="@drawable/add_img_bg"
+                        android:contentDescription="@string/upload_image"
+                        android:padding="5dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/add_photo" />
+
+                    <EditText
+                        android:id="@+id/report_description"
+                        android:layout_width="0dp"
+                        android:layout_height="159dp"
+                        android:layout_below="@+id/description_report"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toEndOf="@+id/report_image_view"
+                        android:autofillHints=""
+                        android:background="@drawable/info_box"
+                        android:ems="10"
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        tools:ignore="LabelFor,SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+
+                    <Button
+                        android:id="@+id/report_upload_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_below="@+id/report_image_view"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="23dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginEnd="7dp"
+                        android:layout_toStartOf="@+id/report_description"
+                        android:background="@drawable/button"
+                        android:backgroundTint="@color/dark_grey"
+                        android:text="@string/select_image"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <Button
+                        android:id="@+id/report_submit_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_below="@+id/report_description"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="46dp"
+                        android:layout_marginEnd="100dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button"
+                        android:backgroundTint="@color/dark_grey"
+                        android:padding="5dp"
+                        android:text="@string/submit"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        tools:ignore="TouchTargetSizeCheck,UnknownIdInLayout,VisualLintButtonSize" />
+
+                    <ProgressBar
+                        android:id="@+id/loading_progress_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:indeterminate="true" />
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

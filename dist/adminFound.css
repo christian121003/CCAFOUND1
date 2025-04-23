@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4f6b3f;
+}
+.navbar {
+    background-color: #4f6b3f;
+}
+.navbar-brand {
+    font-weight: bold;
+    color: white;
+}
+
+.sidebar {
+    background-color: #4f6b3f;
+    min-height: 100vh;
+}
+.sidebar a {
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    background-color: #198754;
+    border-radius: 8px;
+}
+.dashboard-content {
+    background-color: #dcdcdc;
+    padding: 20px;
+}
+
+.input-group label {
+    background-color: #4f6b3f;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px 0 0 5px;
+}
+.form-control, .form-select {
+    border-radius: 0 5px 5px 0;
+}
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.upload-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #4f6b3f;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.btnUpload{
+    text-align: center;
+}
+.btnSubmit{
+    text-align: center;
+}
+
+.notification-bar {
+    position: absolute;
+    top: 80px;
+    width: 350px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.notification-bar.active {
+    display: block;
+}
+.notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+.notification-item:last-child {
+    border-bottom: none;
+}
+.notification-item:hover {
+    background: #f1f1f1;
+}
+.notification-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.notification-content {
+    flex-grow: 1;
+}
+.notification-button {
+    background: #4d6936;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.notification-button:hover {
+    background: #3a4e28;
+}

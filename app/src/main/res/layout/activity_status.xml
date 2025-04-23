@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_profile_img"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatusActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@color/dark_green"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+            <include layout="@layout/bottom_toolbar" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <include
+            android:id="@+id/top"
+            layout="@layout/top_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="658dp"
+            android:layout_margin="20dp"
+            android:layout_marginTop="88dp"
+            android:background="@drawable/cardviewdis1"
+            android:foregroundGravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top">
+
+            <TextView
+                android:id="@+id/status_box_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/status"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/check_form"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="128dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/status_check_box"
+                android:contentDescription="@string/form_submitted"
+                app:layout_constraintEnd_toStartOf="@+id/check_review"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/check_review"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="128dp"
+                android:background="@drawable/status_check_box"
+                android:contentDescription="@string/under_review"
+                app:layout_constraintEnd_toStartOf="@+id/check_search"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/check_form"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/check_search"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginTop="128dp"
+                android:background="@drawable/status_check_box"
+                android:contentDescription="@string/searching_item"
+                app:layout_constraintEnd_toStartOf="@+id/check_found"
+                app:layout_constraintStart_toEndOf="@+id/check_review"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/check_found"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="128dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/status_check_box"
+                android:contentDescription="@string/item_found"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/check_search"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/submit_txt"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="2dp"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="@string/form_submitted"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/review_txt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check_form"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/review_txt"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="@string/under_review"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/submit_txt3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/submit_txt"
+                app:layout_constraintTop_toBottomOf="@+id/check_review" />
+
+            <TextView
+                android:id="@+id/submit_txt3"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="2dp"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="@string/searching_item"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/submit_txt5"
+                app:layout_constraintStart_toEndOf="@+id/review_txt"
+                app:layout_constraintTop_toBottomOf="@+id/check_search"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
+                android:id="@+id/submit_txt5"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="6dp"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="@string/item_found"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/submit_txt3"
+                app:layout_constraintTop_toBottomOf="@+id/check_found" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_review"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/review_txt"
+                app:layout_constraintVertical_bias="0.326">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/review_card_txt"
+                        android:layout_width="145dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/dark_green"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="@string/review_form"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+
+                    <ImageView
+                        android:id="@+id/Item_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="69dp"
+                        android:background="@drawable/info_box"
+                        android:contentDescription="@string/lost_items"
+                        android:padding="10dp"
+                        android:src="@drawable/umbrella" />
+
+                    <TextView
+                        android:id="@+id/form_name"
+                        android:layout_width="68dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="76dp"
+                        android:layout_toEndOf="@+id/Item_img"
+                        android:text="@string/name_status"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/form_email"
+                        android:layout_width="68dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/form_name"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/Item_img"
+                        android:text="@string/email_status"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/form_contact"
+                        android:layout_width="68dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/form_email"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/Item_img"
+                        android:text="@string/contact_status"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+
+                    <TextView
+                        android:id="@+id/form_category"
+                        android:layout_width="68dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/form_contact"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/Item_img"
+                        android:text="@string/category_status"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

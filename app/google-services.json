@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "795614038924",
+    "project_id": "ccafound-74e1a",
+    "storage_bucket": "ccafound-74e1a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795614038924:android:1f33cc6c712f20689f24a9",
+        "android_client_info": {
+          "package_name": "com.example.ccafound1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1_WWSinGuv0lw84Xo-163NUcDUSTaaLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

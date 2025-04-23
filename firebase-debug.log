@@ -1,0 +1,356 @@
+[debug] [2025-03-07T04:55:04.186Z] ----------------------------------------------------------------------
+[debug] [2025-03-07T04:55:04.189Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\shaun\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-03-07T04:55:04.189Z] CLI Version:   13.33.0
+[debug] [2025-03-07T04:55:04.189Z] Platform:      win32
+[debug] [2025-03-07T04:55:04.189Z] Node Version:  v22.11.0
+[debug] [2025-03-07T04:55:04.190Z] Time:          Fri Mar 07 2025 12:55:04 GMT+0800 (Philippine Standard Time)
+[debug] [2025-03-07T04:55:04.190Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-07T04:55:04.196Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-07T04:55:04.197Z] > authorizing via signed-in user (shaunnatemangalao@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\ThesisProject
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-03-07T04:55:41.330Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:55:41.330Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:55:41.331Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-03-07T04:55:41.903Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-03-07T04:55:41.903Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project ccafound-74e1a (CCAFOUND) 
+[info] 
+=== Dataconnect Setup
+[debug] [2025-03-07T04:55:44.436Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:55:44.436Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:55:44.436Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ccafound-74e1a/billingInfo [none]
+[debug] [2025-03-07T04:55:44.755Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ccafound-74e1a/billingInfo 200
+[debug] [2025-03-07T04:55:44.756Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ccafound-74e1a/billingInfo {"name":"projects/ccafound-74e1a/billingInfo","projectId":"ccafound-74e1a","billingAccountName":"","billingEnabled":false}
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2025-03-07T04:55:44.757Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:55:44.757Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:55:44.757Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/sqladmin.googleapis.com [none]
+[debug] [2025-03-07T04:55:44.757Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/sqladmin.googleapis.com x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:55:46.004Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/sqladmin.googleapis.com 200
+[debug] [2025-03-07T04:55:46.004Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/sqladmin.googleapis.com [omitted]
+[info] +  dataconnect: required API sqladmin.googleapis.com is enabled 
+[info] +  Wrote dataconnect\dataconnect.yaml 
+[info] +  Wrote dataconnect\schema\schema.gql 
+[info] +  Wrote dataconnect\connector\connector.yaml 
+[info] +  Wrote dataconnect\connector\queries.gql 
+[info] +  Wrote dataconnect\connector\mutations.gql 
+[info] +  Detected ANDROID app in directory C:\ThesisProject 
+[info] i  Wrote new config to C:\ThesisProject\dataconnect\connector/connector.yaml 
+[info] i  dataconnect: downloading dataconnect-emulator-1.8.4.exe... {"metadata":{"emulator":{"name":"dataconnect"},"message":"downloading dataconnect-emulator-1.8.4.exe..."}}
+[debug] [2025-03-07T04:56:54.929Z] >>> [apiv2][query] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.8.4 
+[debug] [2025-03-07T04:56:55.257Z] <<< [apiv2][status] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.8.4 200
+[debug] [2025-03-07T04:56:55.257Z] <<< [apiv2][body] GET https://storage.googleapis.com/firemat-preview-drop/emulator/dataconnect-emulator-windows-v1.8.4 [stream]
+[info] I0307 12:56:58.252100    8536 codegen.go:82] [connector "default" kotlinSdk] Generating sources into "C:\\ThesisProject\\app\\src\\main\\java\\connectors\\default"
+I0307 12:56:58.334008    8536 generate.go:40] Generated all sources. Writing them to disk...
+I0307 12:56:58.337136    8536 collector.go:107] connector "default" kotlinSdk wrote into "C:\\ThesisProject\\app\\src\\main\\java\\connectors\\default"
+Generated sources: DefaultConnector.kt [8308B] DefaultConnectorKeys.kt [799B] DefaultConnectorEnums.kt [797B] 
+
+[info] i  Generated SDK code for default 
+[info] +  If you'd like to add more generated SDKs to your app your later, run firebase init dataconnect:sdk again 
+[info] i  If you'd like to provision a CloudSQL Postgres instance on the Firebase Data Connect no-cost trial:
+1. Please upgrade to the pay-as-you-go (Blaze) billing plan. Visit the following page:
+     https://console.firebase.google.com/project/ccafound-74e1a/usage/details
+2. Run firebase init dataconnect again to configure the Cloud SQL instance.
+3. Run firebase deploy --only dataconnect to deploy your Data Connect service. 
+[info] 
+=== Firestore Setup
+[debug] [2025-03-07T04:56:58.352Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:56:58.352Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:56:58.352Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/firestore.googleapis.com [none]
+[debug] [2025-03-07T04:56:58.352Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/firestore.googleapis.com x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:56:59.564Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/firestore.googleapis.com 200
+[debug] [2025-03-07T04:56:59.565Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/firestore.googleapis.com [omitted]
+[debug] [2025-03-07T04:56:59.565Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:56:59.565Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:56:59.565Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default) [none]
+[debug] [2025-03-07T04:57:00.753Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default) 200
+[debug] [2025-03-07T04:57:00.753Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default) {"name":"projects/ccafound-74e1a/databases/(default)","uid":"68312fd7-d525-433b-91be-4ece2845918a","createTime":"2025-03-02T03:40:42.198314Z","updateTime":"2025-03-02T03:40:42.198314Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-03-07T03:57:00.175736Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","etag":"IKKUmJ+X94sDMMvSqIO96osD"}
+[debug] [2025-03-07T04:57:00.753Z] database_type: FIRESTORE_NATIVE
+[debug] [2025-03-07T04:57:00.753Z] database_type: FIRESTORE_NATIVE
+[debug] [2025-03-07T04:57:00.754Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-07T04:57:00.754Z] > authorizing via signed-in user (shaunnatemangalao@gmail.com)
+[debug] [2025-03-07T04:57:00.754Z] [iam] checking project ccafound-74e1a for permissions ["firebase.projects.get"]
+[debug] [2025-03-07T04:57:00.754Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:00.754Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:00.754Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions [none]
+[debug] [2025-03-07T04:57:00.754Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:57:00.754Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-03-07T04:57:01.684Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions 200
+[debug] [2025-03-07T04:57:01.684Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-03-07T04:57:01.688Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:01.688Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:01.688Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/ccafound-74e1a/releases pageSize=10&pageToken=
+[debug] [2025-03-07T04:57:02.288Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/ccafound-74e1a/releases 200
+[debug] [2025-03-07T04:57:02.288Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/ccafound-74e1a/releases {"releases":[{"name":"projects/ccafound-74e1a/releases/cloud.firestore","rulesetName":"projects/ccafound-74e1a/rulesets/935de63c-dcb2-4d7c-9815-4ffb6bbb863e","createTime":"2025-03-02T03:40:52.365428Z","updateTime":"2025-03-02T03:40:52.365428Z"}]}
+[debug] [2025-03-07T04:57:02.288Z] Found ruleset: projects/ccafound-74e1a/rulesets/935de63c-dcb2-4d7c-9815-4ffb6bbb863e
+[debug] [2025-03-07T04:57:02.288Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:02.288Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:02.288Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/ccafound-74e1a/rulesets/935de63c-dcb2-4d7c-9815-4ffb6bbb863e [none]
+[debug] [2025-03-07T04:57:03.270Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/ccafound-74e1a/rulesets/935de63c-dcb2-4d7c-9815-4ffb6bbb863e 200
+[debug] [2025-03-07T04:57:03.270Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/ccafound-74e1a/rulesets/935de63c-dcb2-4d7c-9815-4ffb6bbb863e [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2025-03-07T04:57:03.438Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:03.439Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:03.439Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:03.439Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:03.439Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2025-03-07T04:57:03.439Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2025-03-07T04:57:03.700Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2025-03-07T04:57:03.700Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2025-03-07T04:57:03.745Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2025-03-07T04:57:03.745Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ccafound-74e1a/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/ccafound-74e1a/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Genkit Setup
+[debug] [2025-03-07T04:57:08.304Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-07T04:57:08.304Z] > authorizing via signed-in user (shaunnatemangalao@gmail.com)
+[debug] [2025-03-07T04:57:08.304Z] [iam] checking project ccafound-74e1a for permissions ["firebase.projects.get"]
+[debug] [2025-03-07T04:57:08.304Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:08.304Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:08.305Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions [none]
+[debug] [2025-03-07T04:57:08.305Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:57:08.305Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-03-07T04:57:09.181Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions 200
+[debug] [2025-03-07T04:57:09.181Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-03-07T04:57:09.182Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:09.182Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:09.182Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:09.182Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:09.182Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-07T04:57:09.182Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:57:09.183Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-03-07T04:57:09.183Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:57:10.371Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com 200
+[debug] [2025-03-07T04:57:10.371Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-03-07T04:57:10.384Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-07T04:57:10.384Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2025-03-07T04:57:10.384Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:10.384Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:10.384Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2025-03-07T04:57:10.384Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:57:10.903Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2025-03-07T04:57:10.903Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2025-03-07T04:57:20.917Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:20.917Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T04:57:20.917Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-07T04:57:20.917Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T04:57:22.135Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-07T04:57:22.136Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/.eslintrc.js 
+[info] +  Wrote functions/tsconfig.json 
+[info] +  Wrote functions/tsconfig.dev.json 
+[info] +  Wrote functions/src/index.ts 
+[info] +  Wrote functions/.gitignore 
+[info] 
+[info] i  genkit: Installing Genkit CLI version 1.1.0
+ 
+[info] i  genkit: Installing NPM packages for genkit 
+[info] +  genkit: Successfully installed NPM packages 
+[info] i  genkit: Updating tsconfig.json 
+[warn] !  genkit: Skipped updating tsconfig.json 
+[info] i  genkit: Updating package.json 
+[warn] !  genkit: Skipped updating package.json 
+[info] i  genkit: Generating sample file 
+[info] +  genkit: Successfully generated sample file (src/genkit-sample.ts) 
+[info] 
+Login to Google Cloud using:
+[info]     gcloud auth application-default login --project undefined
+
+[info] Then start the Genkit developer experience by running:
+[info]     cd functions && npm run genkit:start
+[info] 
+=== Functions Setup
+[debug] [2025-03-07T05:00:39.736Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-07T05:00:39.739Z] > authorizing via signed-in user (shaunnatemangalao@gmail.com)
+[debug] [2025-03-07T05:00:39.739Z] [iam] checking project ccafound-74e1a for permissions ["firebase.projects.get"]
+[debug] [2025-03-07T05:00:39.750Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:00:39.750Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:00:39.753Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions [none]
+[debug] [2025-03-07T05:00:39.753Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T05:00:39.753Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-03-07T05:00:40.710Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions 200
+[debug] [2025-03-07T05:00:40.710Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ccafound-74e1a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2025-03-07T05:00:40.714Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:00:40.714Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:00:40.714Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:00:40.714Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:00:40.715Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-03-07T05:00:40.715Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T05:00:40.716Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-03-07T05:00:40.716Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ccafound-74e1a
+[debug] [2025-03-07T05:00:41.927Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com 200
+[debug] [2025-03-07T05:00:41.928Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-03-07T05:00:41.934Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com 200
+[debug] [2025-03-07T05:00:41.934Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ccafound-74e1a/services/cloudfunctions.googleapis.com [omitted]
+[info] 
+Detected existing codebase(s): default
+
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[error] Invalid codebase name. Codebase must be less than 64 characters and can contain only lowercase letters, numeric characters, underscores, and dashes.
+[info] +  Wrote admindashboard/package.json 
+[info] +  Wrote admindashboard/.eslintrc.js 
+[info] +  Wrote admindashboard/index.js 
+[info] +  Wrote admindashboard/.gitignore 
+[info] 
+=== Apphosting Setup
+[debug] [2025-03-07T05:01:48.912Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:01:48.912Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:01:48.913Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ccafound-74e1a/billingInfo [none]
+[debug] [2025-03-07T05:01:49.489Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ccafound-74e1a/billingInfo 200
+[debug] [2025-03-07T05:01:49.490Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ccafound-74e1a/billingInfo {"name":"projects/ccafound-74e1a/billingInfo","projectId":"ccafound-74e1a","billingAccountName":"","billingEnabled":false}
+[info] i  Writing default settings to apphosting.yaml... 
+[info] +  Wrote apphosting.yaml 
+[info] +  Create a new App Hosting backend with `firebase apphosting:backends:create` 
+[info] 
+=== Hosting Setup
+[debug] [2025-03-07T05:01:49.513Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:01:49.513Z] Checked if tokens are valid: true, expires at: 1741326890058
+[debug] [2025-03-07T05:01:49.515Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ccafound-74e1a [none]
+[debug] [2025-03-07T05:01:49.990Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ccafound-74e1a 200
+[debug] [2025-03-07T05:01:49.990Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ccafound-74e1a {"projectId":"ccafound-74e1a","projectNumber":"795614038924","displayName":"CCAFOUND","name":"projects/ccafound-74e1a","resources":{"hostingSite":"ccafound-74e1a","realtimeDatabaseInstance":"ccafound-74e1a-default-rtdb"},"state":"ACTIVE","etag":"1_0caa1034-4e6d-4f6c-bd67-e9fc83996888"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-03-07T05:02:03.914Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-03-07T05:02:03.993Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-03-07T05:02:03.993Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"11.4.0","browserURL":"https://www.gstatic.com/firebasejs/11.4.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/11.4.0/firebase.tgz"},"live":{"version":"11.4","browserURL":"https://www.gstatic.com/firebasejs/live/11.4/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/11.4/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/11.4.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/11.4.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/11.4.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/11.4.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/11.4.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/11.4.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/11.4.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/11.4.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/11.4.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js","vertexai":"https://www.gstatic.com/firebasejs/11.4.0/firebase-vertexai.js","data-connect":"https://www.gstatic.com/firebasejs/11.4.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming C:\ThesisProject is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=258024238&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2025-03-07T05:06:52.817Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2025-03-07T05:06:52.819Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2025-03-07T05:06:53.332Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2025-03-07T05:06:53.332Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2025-03-07T05:06:53.347Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2025-03-07T05:06:53.841Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2025-03-07T05:06:53.841Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"christian121003","id":145883469,"node_id":"U_kgDOCLIBTQ","avatar_url":"https://avatars.githubusercontent.com/u/145883469?v=4","gravatar_id":"","url":"https://api.github.com/users/christian121003","html_url":"https://github.com/christian121003","followers_url":"https://api.github.com/users/christian121003/followers","following_url":"https://api.github.com/users/christian121003/following{/other_user}","gists_url":"https://api.github.com/users/christian121003/gists{/gist_id}","starred_url":"https://api.github.com/users/christian121003/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/christian121003/subscriptions","organizations_url":"https://api.github.com/users/christian121003/orgs","repos_url":"https://api.github.com/users/christian121003/repos","events_url":"https://api.github.com/users/christian121003/events{/privacy}","received_events_url":"https://api.github.com/users/christian121003/received_events","type":"User","user_view_type":"private","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":0,"public_gists":0,"followers":0,"following":0,"created_at":"2023-09-24T02:17:32Z","updated_at":"2025-03-07T05:05:15Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":0,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as christian121003 
+[info] 
+[debug] [2025-03-07T05:06:53.852Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2025-03-07T05:06:54.180Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2025-03-07T05:06:54.180Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-03-07T05:06:59.319Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2025-03-07T05:06:59.689Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2025-03-07T05:06:59.689Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-03-07T05:07:00.620Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2025-03-07T05:07:00.923Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2025-03-07T05:07:00.923Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-03-07T05:07:05.753Z] >>> [apiv2][query] GET https://api.github.com/repos/y/actions/secrets/public-key type=owner
+[debug] [2025-03-07T05:07:06.060Z] <<< [apiv2][status] GET https://api.github.com/repos/y/actions/secrets/public-key 404
+[debug] [2025-03-07T05:07:06.061Z] <<< [apiv2][body] GET https://api.github.com/repos/y/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-03-07T05:07:23.406Z] >>> [apiv2][query] GET https://api.github.com/repos/respository/actions/secrets/public-key type=owner
+[debug] [2025-03-07T05:07:23.797Z] <<< [apiv2][status] GET https://api.github.com/repos/respository/actions/secrets/public-key 404
+[debug] [2025-03-07T05:07:23.797Z] <<< [apiv2][body] GET https://api.github.com/repos/respository/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-03-07T05:08:12.924Z] >>> [apiv2][query] GET https://api.github.com/repos/user/actions/secrets/public-key type=owner
+[debug] [2025-03-07T05:08:13.310Z] <<< [apiv2][status] GET https://api.github.com/repos/user/actions/secrets/public-key 404
+[debug] [2025-03-07T05:08:13.310Z] <<< [apiv2][body] GET https://api.github.com/repos/user/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-03-07T05:08:16.981Z] >>> [apiv2][query] GET https://api.github.com/repos/?/actions/secrets/public-key type=owner
+[debug] [2025-03-07T05:08:17.268Z] <<< [apiv2][status] GET https://api.github.com/repos/?/actions/secrets/public-key 404
+[debug] [2025-03-07T05:08:17.269Z] <<< [apiv2][body] GET https://api.github.com/repos/?/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
