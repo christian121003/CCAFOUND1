@@ -6,8 +6,12 @@
     <color name="med_white">#E5E5E5</color>
     <color name="dark_grey">#1E1E1E</color>
     <color name="med_grey">#454545</color>
-    <color name="red">#FF0000</color>
-    <color name="orange">#FF9900</color>
     <color name="grey">#808080</color>
+    <color name="light_yellow">#FFF8DC</color>
+    <color name="light_blue">#E0F7FA</color>
+    <color name="green">#2E7D32</color>
+    <color name="dark_blue">#1565C0</color>
+    <color name="red">#D32F2F</color>
+    <color name="orange">#FB8C00</color>
 </resources>
 

@@ -14,6 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -27,6 +28,7 @@ public class FoundActivity extends AppCompatActivity {
     private EditText Name, Email, Contact, Category, Description, Date;
     private ProgressBar progressBarf;
     private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
     private ImageView imageView;
     private Uri imageUri;
     private StorageReference storageRef;
@@ -46,6 +48,7 @@ public class FoundActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setTitle("Report");
         }
+
         Button submit = findViewById(R.id.found_submit_btn);
         ImageView backButton = findViewById(R.id.back_btn);
         Name = findViewById(R.id.found_input_name);
@@ -55,17 +58,45 @@ public class FoundActivity extends AppCompatActivity {
         Description = findViewById(R.id.found_description);
         Date = findViewById(R.id.found_input_date);
         imageView = findViewById(R.id.found_image_view);
-        progressBarf = findViewById(R.id.loading_progress_found);
+
+        progressBarf = findViewById(R.id.loading_progress_report);
         db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         FirebaseStorage storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
 
         backButton.setOnClickListener(v -> finish());
         submit.setOnClickListener(v -> uploadData());
         imageView.setOnClickListener(v -> openGallery());
+        loadUserData();
     }
     private void openGallery() {
         imagePickerLauncher.launch("image/*"); // Launch the image picker for any image type
+    }
+
+    private void loadUserData() {
+        String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+
+        db.collection("users").document(userId)
+                .get()
+                .addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String userName = documentSnapshot.getString("name");
+                        String userEmail = documentSnapshot.getString("email");
+                        String userContact = documentSnapshot.getString("contact");
+
+                        // Set the values in the report fields
+                        Name.setText(userName);
+                        Email.setText(userEmail);
+                        Contact.setText(userContact);
+
+                        // Disable editing for these fields
+                        Name.setEnabled(false);
+                        Email.setEnabled(false);
+                        Contact.setEnabled(false);
+                    }
+                })
+                .addOnFailureListener(e -> Toast.makeText(FoundActivity.this, "Error loading user data", Toast.LENGTH_SHORT).show());
     }
     private void uploadData() {
         String name = Name.getText().toString().trim();
@@ -112,6 +143,7 @@ public class FoundActivity extends AppCompatActivity {
             showLoading(false);
             if (task.isSuccessful()) {
                 Toast.makeText(FoundActivity.this, "Report Uploaded", Toast.LENGTH_SHORT).show();
+                incrementUserReportCount();
                 clearFields();
             } else {
                 Toast.makeText(FoundActivity.this, "Upload Failed!", Toast.LENGTH_SHORT).show();
@@ -120,6 +152,18 @@ public class FoundActivity extends AppCompatActivity {
             showLoading(false);
             Toast.makeText(FoundActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         });
+    }
+
+    private void incrementUserReportCount() {
+        String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+        db.collection("users")
+                .document(userId)
+                .update("reportCount", com.google.firebase.firestore.FieldValue.increment(1))
+                .addOnSuccessListener(aVoid -> {
+                    // Optional: Log or toast message for success
+                    // Log.d("ReportActivity", "Report count incremented.");
+                })
+                .addOnFailureListener(e -> Toast.makeText(FoundActivity.this, "Failed to update report count", Toast.LENGTH_SHORT).show());
     }
     private void showLoading(boolean show) {
         progressBarf.setVisibility(show ? View.VISIBLE : View.GONE);

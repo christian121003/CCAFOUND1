@@ -82,5 +82,17 @@
     <string name="description">A black, foldable umbrella with a silver metal handle and a small tear on the edge of one panel. The umbrella is compact in size and has a brand tag labeled “RainShield” on the strap. It may have been left on a chair or table in the reading area.</string>
     <string name="image_item">Image_item</string>
     <string name="sign_in_button_description">sign_in_button_description</string>
+    <string name="image_labeling_failed">"Image labeling failed: "</string>
+    <string name="top_student_lost_item">Top student lost item:</string>
+    <string name="top_students_lost_found_items">Top Students - Lost/Found Items</string>
+    <string name="item_status">item_status</string>
+    <string name="student_name">Student_Name</string>
+    <string name="_1">1</string>
+    <string name="topprofileimg">TopProfileImg</string>
+    <string name="_5">5</string>
+    <string name="report">Report</string>
+    <string name="top_student">Top Student</string>
+    <string name="top_student_found_items">Top Students Found Items</string>
+    <string name="student_rankings_list">Student rankings list</string>
 
 </resources>

@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         loadUserData();
 
         statusBtn.setOnClickListener(v -> {
-            Intent statusIntent = new Intent(MainActivity.this, StatusActivity.class);
+            Intent statusIntent = new Intent(MainActivity.this, RankingActivity.class);
             startActivity(statusIntent);
         });
 
@@ -125,9 +125,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.nav_activity) {
             Intent activityIntent = new Intent(MainActivity.this, ActivitiesActivity.class);
             startActivity(activityIntent);
-        } else if (itemId == R.id.nav_status) {
-            Intent statusIntent = new Intent(MainActivity.this, StatusActivity.class);
-            startActivity(statusIntent);
         } else if (itemId == R.id.nav_report) {
             Intent reportIntent = new Intent(MainActivity.this, ReportActivity.class);
             startActivity(reportIntent);

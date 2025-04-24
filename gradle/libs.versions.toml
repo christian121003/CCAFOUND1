@@ -8,36 +8,43 @@ comGoogleAndroidGmsPlayServicesAuth = "21.0.0"
 comGoogleAndroidGmsPlayServicesAuth2 = "21.3.0"
 compiler = "4.16.0"
 credentialsVersion = "<lates-version>"
-firebaseBom = "33.9.0"
-firebaseBomVersion = "30.2.0"
+firebaseBom = "33.12.0"
+firebaseBomVersion = "33.12.0"
 firebaseDatabase = "21.0.0"
+firebaseFirestoreVersion = "25.1.3"
 firebaseStorage = "21.0.1"
 glide = "4.16.0"
-glideVersion = "4.13.2"
+glideVersion = "4.16.0"
+googleFirebaseBom = "33.12.0"
 googleGoogleid = "latest version"
-googleGoogleidVersion = "1.0.18"
+googleGoogleidVersion = "1.1.1"
 googleidVersion = "<latest version>"
-googlePlayServicesAuth = "20.7.0"
-googlePlayServicesAuthVersion = "20.0.0"
+googlePlayServicesAuth = "21.3.0"
+googlePlayServicesAuthVersion = "21.3.0"
 googleServices = "4.4.2"
 googleServicesVersion = "latest version"
 gradle = "8.1.4"
 imageLabeling = "17.0.9"
+imageLabelingCommon = "18.1.0"
+imageLabelingCustom = "17.0.3"
+imageLabelingVersion = "17.0.9"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
-activity = "1.10.0"
-constraintlayout = "2.2.0"
+activity = "1.10.1"
+constraintlayout = "2.2.1"
 legacySupportV4 = "1.0.0"
 googleGmsGoogleServices = "4.4.2"
 firebaseAuth = "23.2.0"
-credentials = "1.3.0"
-credentialsPlayServicesAuth = "1.3.0"
+credentials = "1.5.0"
+credentialsPlayServicesAuth = "1.5.0"
 googleid = "1.1.1"
-firebaseInappmessaging = "21.0.1"
+firebaseInappmessaging = "21.0.2"
 mlkitVisionImageLabeling = "17.0.0"
+mpandroidchart = "v3.1.0"
+picassoVersion = "2.71828"
 playServicesAuth = "latest-version"
 playServicesAuthVersion = "<latest version>"
 recyclerview = "1.4.0"
@@ -46,30 +53,42 @@ tensorflowLiteGpu = "2.10.0"
 tensorflowLiteVersion = "2.10.0"
 volley = "1.2.1"
 workRuntime = "2.10.0"
-firebaseFirestore = "25.1.2"
+firebaseFirestore = "25.1.3"
 
 [libraries]
 activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
 activity-v170 = { module = "androidx.activity:activity", version.ref = "activityVersion" }
 appcompat-v160 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
 com-google-firebase-firebase-database = { module = "com.google.firebase:firebase-database", version.ref = "firebaseDatabase" }
+com-google-firebase-firebase-database2 = { module = "com.google.firebase:firebase-database" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "compiler" }
 credentials-play-services-auth-vlatestversion = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "androidxCredentialsPlayServicesAuth" }
 credentials-vlatesversion = { module = "androidx.credentials:credentials", version.ref = "credentialsVersion" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-bom-v3020 = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBomVersion" }
+firebase-bom-v33120 = { module = "com.google.firebase:firebase-bom", version.ref = "googleFirebaseBom" }
 firebase-database = { module = "com.google.firebase:firebase-database" }
+firebase-firestore-v2513 = { module = "com.google.firebase:firebase-firestore", version.ref = "firebaseFirestoreVersion" }
 firebase-storage = { module = "com.google.firebase:firebase-storage", version.ref = "firebaseStorage" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 glide-v4132 = { module = "com.github.bumptech.glide:glide", version.ref = "glideVersion" }
 gms-google-services = { module = "classpath 'com.google.gms:google-services", version.ref = "googleServicesVersion" }
+gms-play-services-auth = { module = "com.google.android.gms:play-services-auth" }
+google-firebase-auth = { module = "com.google.firebase:firebase-auth" }
 google-firebase-database = { module = "com.google.firebase:firebase-database" }
+google-firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
+google-firebase-inappmessaging = { module = "com.google.firebase:firebase-inappmessaging" }
+google-firebase-storage = { module = "com.google.firebase:firebase-storage" }
 google-googleid-vlatestversion = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleGoogleid" }
 google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
 googleid-v1018 = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleGoogleidVersion" }
 googleid-vlatestversion = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleidVersion" }
 gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 image-labeling = { module = "com.google.mlkit:image-labeling", version.ref = "imageLabeling" }
+image-labeling-common = { module = "com.google.mlkit:image-labeling-common", version.ref = "imageLabelingCommon" }
+image-labeling-custom = { module = "com.google.mlkit:image-labeling-custom", version.ref = "imageLabelingCustom" }
+image-labeling-v1707 = { module = "com.google.mlkit:image-labeling", version.ref = "imageLabelingVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -84,6 +103,7 @@ credentials-play-services-auth = { group = "androidx.credentials", name = "crede
 googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "googleid" }
 firebase-inappmessaging = { group = "com.google.firebase", name = "firebase-inappmessaging", version.ref = "firebaseInappmessaging" }
 mlkit-vision-image-labeling = { module = "com.google.mlkit:mlkit-vision-image-labeling", version.ref = "mlkitVisionImageLabeling" }
+mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchart" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-auth-v2000 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuthVersion" }
 play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "googlePlayServicesAuth" }
@@ -91,6 +111,7 @@ play-services-auth-v2100 = { module = "com.google.android.gms:play-services-auth
 play-services-auth-v2130 = { module = "com.google.android.gms:play-services-auth", version.ref = "comGoogleAndroidGmsPlayServicesAuth2" }
 play-services-auth-vlatestversion = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
 recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+squareup-picasso = { module = "com.squareup.picasso:picasso", version.ref = "picassoVersion" }
 tensorflow-lite-gpu = { module = "org.tensorflow:tensorflow-lite-gpu", version.ref = "tensorflowLiteGpu" }
 tensorflow-lite-support = { module = "org.tensorflow:tensorflow-lite-support", version.ref = "tensorflowLiteSupport" }
 tensorflow-tensorflow-lite = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorflowLiteVersion" }

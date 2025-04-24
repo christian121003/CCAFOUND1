@@ -33,34 +33,38 @@ android {
 }
 
 dependencies {
-    implementation(libs.credentials.vlatesversion)
-    implementation(libs.googleid)
-    implementation(libs.com.google.firebase.firebase.database)
-    implementation(libs.firebase.storage)
-    implementation(libs.glide)
-    implementation(libs.play.services.auth.v2100)
-    implementation(libs.activity.ktx)
-    implementation(libs.glide.v4132)
-    implementation(libs.appcompat)
-    implementation(libs.volley)
-    implementation(libs.image.labeling)
-    annotationProcessor(libs.compiler)
-    implementation(libs.glide)
-    implementation(libs.work.runtime)
-    implementation(libs.activity.v170)
-    implementation(libs.google.googleid.vlatestversion)
+    // Firebase BoM to manage all Firebase versions
     implementation(platform(libs.firebase.bom))
-    implementation(libs.google.firebase.database)
-    implementation(libs.material)
-    implementation(libs.play.services.auth.v2130)
+
+    // Firebase libraries (Firebase Firestore, Auth, etc.)
+    implementation(libs.google.firebase.auth)
+    implementation(libs.google.firebase.firestore)
+    implementation(libs.com.google.firebase.firebase.database2)
+    implementation(libs.google.firebase.storage)
+    implementation(libs.google.firebase.inappmessaging)
+
+    // Google Sign-In and Play Services
+    implementation(libs.play.services.auth.v2000)
+
+    // MPAndroidChart for charting
+
+    implementation(libs.firebase.analytics)
+    implementation(libs.image.labeling)
+
+    // Other dependencies (UI, image loading, etc.)
+    implementation(libs.squareup.picasso)
+    implementation(libs.glide)
+
+    // RecyclerView, Material Design, AppCompat
     implementation(libs.recyclerview)
+    implementation(libs.material)
+    implementation(libs.appcompat)
     implementation(libs.constraintlayout)
-    implementation(libs.legacy.support.v4)
-    implementation(libs.firebase.inappmessaging)
-    implementation(libs.firebase.firestore)
-    implementation(libs.firebase.auth)
-    annotationProcessor(libs.compiler)
+    implementation(libs.activity.v170)
+
+    // Testing libraries
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }
+

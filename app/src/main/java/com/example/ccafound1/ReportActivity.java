@@ -19,12 +19,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-import com.google.mlkit.vision.common.InputImage;
-import com.google.mlkit.vision.label.ImageLabel;
-import com.google.mlkit.vision.label.ImageLabeler;
-import com.google.mlkit.vision.label.ImageLabeling;
-import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -111,6 +105,7 @@ public class ReportActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e -> Toast.makeText(ReportActivity.this, "Error loading user data", Toast.LENGTH_SHORT).show());
     }
+
     private void uploadData() {
         String name = Name.getText().toString().trim();
         String email = Email.getText().toString().trim();
@@ -118,6 +113,7 @@ public class ReportActivity extends AppCompatActivity {
         String category = Category.getText().toString().trim();
         String description = Description.getText().toString().trim();
         String date = Date.getText().toString().trim();
+
         if (category.isEmpty()) {
             Category.setError("Category is required");
             return;
@@ -130,6 +126,7 @@ public class ReportActivity extends AppCompatActivity {
             Date.setError("Date is required");
             return;
         }
+
         showLoading(true);
         String id = UUID.randomUUID().toString();
         Map<String, Object> doc = new HashMap<>();
@@ -140,6 +137,7 @@ public class ReportActivity extends AppCompatActivity {
         doc.put("category", category);
         doc.put("description", description);
         doc.put("date", date);
+
         if (imageUri != null) {
             String fileName = UUID.randomUUID().toString();
             StorageReference fileReference = storageRef.child("lost_images/" + fileName);
@@ -156,23 +154,28 @@ public class ReportActivity extends AppCompatActivity {
             saveDataToFirestore(doc);
         }
     }
+
     private void saveDataToFirestore(Map<String, Object> doc) {
-        db.collection("Lost_Item").document(Objects.requireNonNull(doc.get("id")).toString()).set(doc).addOnCompleteListener(task -> {
-            showLoading(false);
-            if (task.isSuccessful()) {
-                Toast.makeText(ReportActivity.this, "Report Uploaded", Toast.LENGTH_SHORT).show();
-                clearFields();
-            } else {
-                Toast.makeText(ReportActivity.this, "Upload Failed!", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(e -> {
-            showLoading(false);
-            Toast.makeText(ReportActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-        });
+        db.collection("Lost_Item").document(Objects.requireNonNull(doc.get("id")).toString()).set(doc)
+                .addOnCompleteListener(task -> {
+                    showLoading(false);
+                    if (task.isSuccessful()) {
+                        Toast.makeText(ReportActivity.this, "Report Uploaded", Toast.LENGTH_SHORT).show();
+                        clearFields();
+                    } else {
+                        Toast.makeText(ReportActivity.this, "Upload Failed!", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    showLoading(false);
+                    Toast.makeText(ReportActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
     }
+
     private void showLoading(boolean show) {
         progressBarr.setVisibility(show ? View.VISIBLE : View.GONE);
     }
+
     private void clearFields() {
         Category.setText("");
         Description.setText("");

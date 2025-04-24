@@ -241,7 +241,7 @@
                             android:layout_height="26dp"
                             android:layout_below="@id/status_btn"
                             android:layout_centerHorizontal="true"
-                            android:text="@string/status"
+                            android:text="@string/top_student"
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             tools:ignore="TextSizeCheck" />
