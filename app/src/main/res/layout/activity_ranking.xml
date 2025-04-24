@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF"
+    tools:context=".RankingActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutRanking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/tvRankingTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/top_student_found_items"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="12dp" />
+
+        <!-- RecyclerView for Ranking List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRanking"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="vertical"
+            android:contentDescription="@string/student_rankings_list" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
