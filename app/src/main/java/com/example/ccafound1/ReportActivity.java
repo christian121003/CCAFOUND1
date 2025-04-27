@@ -25,7 +25,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class ReportActivity extends AppCompatActivity {
-    private EditText Name, Email, Contact, Category, Description, Date;
+    private EditText Name, Email, Section, Category, Description, Date;
     private ProgressBar progressBarr;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
@@ -47,24 +47,21 @@ public class ReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
 
-        // Set up Action Bar
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle("Report");
         }
 
-        // Initialize Views
         ImageView backButton = findViewById(R.id.back_btn);
         Button submit = findViewById(R.id.report_submit_btn);
         Name = findViewById(R.id.report_input_name);
         Email = findViewById(R.id.report_input_email);
-        Contact = findViewById(R.id.report_input_contact);
+        Section = findViewById(R.id.report_input_section);
         Category = findViewById(R.id.report_input_category);
         Description = findViewById(R.id.report_description);
         Date = findViewById(R.id.report_input_date);
         imageView = findViewById(R.id.report_image_view);
 
-        // Initialize Firebase and ProgressDialog
         progressBarr = findViewById(R.id.loading_progress_report);
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -74,11 +71,12 @@ public class ReportActivity extends AppCompatActivity {
         backButton.setOnClickListener(v -> finish());
         submit.setOnClickListener(v -> uploadData());
         imageView.setOnClickListener(v -> openGallery());
+
         loadUserData();
     }
 
     private void openGallery() {
-        imagePickerLauncher.launch("image/*"); // Launch the image picker for any image type
+        imagePickerLauncher.launch("image/*");
     }
 
     private void loadUserData() {
@@ -90,17 +88,15 @@ public class ReportActivity extends AppCompatActivity {
                     if (documentSnapshot.exists()) {
                         String userName = documentSnapshot.getString("name");
                         String userEmail = documentSnapshot.getString("email");
-                        String userContact = documentSnapshot.getString("contact");
+                        String userSection = documentSnapshot.getString("section");
 
-                        // Set the values in the report fields
                         Name.setText(userName);
                         Email.setText(userEmail);
-                        Contact.setText(userContact);
+                        Section.setText(userSection);
 
-                        // Disable editing for these fields
                         Name.setEnabled(false);
                         Email.setEnabled(false);
-                        Contact.setEnabled(false);
+                        Section.setEnabled(false);
                     }
                 })
                 .addOnFailureListener(e -> Toast.makeText(ReportActivity.this, "Error loading user data", Toast.LENGTH_SHORT).show());
@@ -109,21 +105,13 @@ public class ReportActivity extends AppCompatActivity {
     private void uploadData() {
         String name = Name.getText().toString().trim();
         String email = Email.getText().toString().trim();
-        String contact = Contact.getText().toString().trim();
+        String section = Section.getText().toString().trim();
         String category = Category.getText().toString().trim();
         String description = Description.getText().toString().trim();
         String date = Date.getText().toString().trim();
 
-        if (category.isEmpty()) {
-            Category.setError("Category is required");
-            return;
-        }
-        if (description.isEmpty()) {
-            Description.setError("Description is required");
-            return;
-        }
-        if (date.isEmpty()) {
-            Date.setError("Date is required");
+        if (category.isEmpty() || description.isEmpty() || date.isEmpty()) {
+            Toast.makeText( this,"All fields are required", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -133,7 +121,7 @@ public class ReportActivity extends AppCompatActivity {
         doc.put("id", id);
         doc.put("name", name);
         doc.put("email", email);
-        doc.put("contact", contact);
+        doc.put("section", section);
         doc.put("category", category);
         doc.put("description", description);
         doc.put("date", date);

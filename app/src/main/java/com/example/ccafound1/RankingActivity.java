@@ -1,58 +1,60 @@
+// RankingActivity.java
+
 package com.example.ccafound1;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RankingActivity extends AppCompatActivity {
-
+    private RecyclerView recyclerView;
     private RankingAdapter adapter;
-    private List<StudentRanking> studentList;
-    private FirebaseFirestore db;
+    private final List<StudentRanking> rankings = new ArrayList<>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewRanking);
+        recyclerView = findViewById(R.id.recyclerViewRanking);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        studentList = new ArrayList<>();
-        adapter = new RankingAdapter(studentList);
+        adapter = new RankingAdapter(rankings);
         recyclerView.setAdapter(adapter);
 
-        db = FirebaseFirestore.getInstance();
-
-        loadRankingData();
+        loadTopReporters();
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    private void loadRankingData() {
+    private void loadTopReporters() {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
         db.collection("users")
-                .orderBy("reportCount", Query.Direction.ASCENDING)
+                .orderBy("foundCount", Query.Direction.DESCENDING)
+                .limit(10)
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
-                    studentList.clear();
-                    Log.d("RankingActivity", "Documents fetched: " + queryDocumentSnapshots.size());
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        StudentRanking student = doc.toObject(StudentRanking.class);
-                        studentList.add(student);
+                    rankings.clear();
+                    for (DocumentSnapshot doc : queryDocumentSnapshots) {
+                        String name = doc.getString("name");
+                        String imageUrl = doc.getString("profileImageUrl");
+                        Long foundCount = doc.getLong("foundCount");
+
+                        StudentRanking student = new StudentRanking(
+                                name,
+                                imageUrl,
+                                foundCount != null ? foundCount : 0
+                        );
+                        rankings.add(student);
                     }
                     adapter.notifyDataSetChanged();
                 })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(RankingActivity.this, "Error loading data", Toast.LENGTH_SHORT).show();
-                    Log.e("RankingActivity", "Firestore Error: ", e);
-                });
+                .addOnFailureListener(e -> Toast.makeText(this, "Failed to load rankings", Toast.LENGTH_SHORT).show());
     }
 }

@@ -124,7 +124,7 @@
                 tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
             <EditText
-                android:id="@+id/profile_input_contact"
+                android:id="@+id/profile_input_section"
                 android:layout_width="0dp"
                 android:layout_height="29dp"
                 android:layout_alignParentEnd="true"
@@ -132,8 +132,8 @@
                 android:autofillHints=""
                 android:background="@drawable/info_box"
                 android:ems="10"
-                android:hint="@string/contact"
-                android:inputType="phone"
+                android:hint="@string/section"
+                android:inputType="text"
                 android:padding="5dp"
                 android:paddingStart="20dp"
                 android:paddingEnd="1dp"
@@ -162,7 +162,7 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile_input_contact"
+                app:layout_constraintTop_toBottomOf="@+id/profile_input_section"
                 tools:ignore="DuplicateSpeakableTextCheck,LabelFor,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
 

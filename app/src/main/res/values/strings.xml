@@ -94,5 +94,8 @@
     <string name="top_student">Top Student</string>
     <string name="top_student_found_items">Top Students Found Items</string>
     <string name="student_rankings_list">Student rankings list</string>
+    <string name="section">Section</string>
+    <string name="textview">TextView</string>
+    <string name="image_recognition">Image Recognition</string>
 
 </resources>

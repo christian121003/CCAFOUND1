@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent activityIntent = new Intent(MainActivity.this, ActivitiesActivity.class);
             startActivity(activityIntent);
         } else if (itemId == R.id.nav_report) {
-            Intent reportIntent = new Intent(MainActivity.this, ReportActivity.class);
+            Intent reportIntent = new Intent(MainActivity.this, ImageClass.class);
             startActivity(reportIntent);
         } else if (itemId == R.id.nav_return) {
             Intent returnIntent = new Intent(MainActivity.this, FoundActivity.class);

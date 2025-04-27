@@ -15,6 +15,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -25,7 +26,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class FoundActivity extends AppCompatActivity {
-    private EditText Name, Email, Contact, Category, Description, Date;
+    private EditText Name, Email, Section, Category, Description, Date;
     private ProgressBar progressBarf;
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
@@ -53,13 +54,13 @@ public class FoundActivity extends AppCompatActivity {
         ImageView backButton = findViewById(R.id.back_btn);
         Name = findViewById(R.id.found_input_name);
         Email = findViewById(R.id.found_input_email);
-        Contact = findViewById(R.id.found_input_contact);
+        Section = findViewById(R.id.found_input_section);
         Category = findViewById(R.id.found_input_category);
         Description = findViewById(R.id.found_description);
         Date = findViewById(R.id.found_input_date);
         imageView = findViewById(R.id.found_image_view);
 
-        progressBarf = findViewById(R.id.loading_progress_report);
+        progressBarf = findViewById(R.id.loading_progress_found);
         db = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
         FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -71,7 +72,7 @@ public class FoundActivity extends AppCompatActivity {
         loadUserData();
     }
     private void openGallery() {
-        imagePickerLauncher.launch("image/*"); // Launch the image picker for any image type
+        imagePickerLauncher.launch("image/*");
     }
 
     private void loadUserData() {
@@ -83,17 +84,15 @@ public class FoundActivity extends AppCompatActivity {
                     if (documentSnapshot.exists()) {
                         String userName = documentSnapshot.getString("name");
                         String userEmail = documentSnapshot.getString("email");
-                        String userContact = documentSnapshot.getString("contact");
+                        String userSection = documentSnapshot.getString("section");
 
-                        // Set the values in the report fields
-                        Name.setText(userName);
+                        Name.setText(userName); 
                         Email.setText(userEmail);
-                        Contact.setText(userContact);
+                        Section.setText(userSection);
 
-                        // Disable editing for these fields
                         Name.setEnabled(false);
                         Email.setEnabled(false);
-                        Contact.setEnabled(false);
+                        Section.setEnabled(false);
                     }
                 })
                 .addOnFailureListener(e -> Toast.makeText(FoundActivity.this, "Error loading user data", Toast.LENGTH_SHORT).show());
@@ -101,12 +100,12 @@ public class FoundActivity extends AppCompatActivity {
     private void uploadData() {
         String name = Name.getText().toString().trim();
         String email = Email.getText().toString().trim();
-        String contact = Contact.getText().toString().trim();
+        String contact = Section.getText().toString().trim();
         String category = Category.getText().toString().trim();
         String description = Description.getText().toString().trim();
         String date = Date.getText().toString().trim();
 
-        if (name.isEmpty() || email.isEmpty() || contact.isEmpty() || category.isEmpty() || description.isEmpty() || date.isEmpty()) {
+        if (category.isEmpty() || description.isEmpty() || date.isEmpty()) {
             Toast.makeText(this, "All fields are required!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -124,7 +123,7 @@ public class FoundActivity extends AppCompatActivity {
 
         if (imageUri != null) {
             String fileName = UUID.randomUUID().toString();
-            StorageReference fileReference = storageRef.child("found_images/" + fileName);
+            StorageReference fileReference = storageRef.child("Found_images/" + fileName);
 
             fileReference.putFile(imageUri).addOnSuccessListener(taskSnapshot -> fileReference.getDownloadUrl().addOnSuccessListener(uri -> {
                 String imageUrl = uri.toString();
@@ -158,16 +157,14 @@ public class FoundActivity extends AppCompatActivity {
         String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         db.collection("users")
                 .document(userId)
-                .update("reportCount", com.google.firebase.firestore.FieldValue.increment(1))
-                .addOnSuccessListener(aVoid -> {
-                    // Optional: Log or toast message for success
-                    // Log.d("ReportActivity", "Report count incremented.");
-                })
+                .update("foundCount", FieldValue.increment(1))
+                .addOnSuccessListener(aVoid -> {})
                 .addOnFailureListener(e -> Toast.makeText(FoundActivity.this, "Failed to update report count", Toast.LENGTH_SHORT).show());
     }
     private void showLoading(boolean show) {
         progressBarf.setVisibility(show ? View.VISIBLE : View.GONE);
     }
+
     private void clearFields() {
         Category.setText("");
         Description.setText("");

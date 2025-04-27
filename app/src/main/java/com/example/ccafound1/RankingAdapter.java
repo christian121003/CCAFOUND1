@@ -29,9 +29,13 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingV
     @Override
     public void onBindViewHolder(@NonNull RankingViewHolder holder, int position) {
         StudentRanking student = rankings.get(position);
-        holder.nameTextView.setText(student.getName());
-        holder.reportCountTextView.setText("Reported: " + student.getReportCount());
 
+        // Set the rank (1-based index)
+        holder.rankTextView.setText(String.valueOf(position + 1));
+        holder.nameTextView.setText(student.getName());
+        holder.reportCountTextView.setText("Reported: " + student.getFoundCount());
+
+        // Load profile image using Glide
         Glide.with(holder.itemView.getContext())
                 .load(student.getProfileImageUrl())
                 .into(holder.profileImageView);
@@ -44,9 +48,11 @@ public class RankingAdapter extends RecyclerView.Adapter<RankingAdapter.RankingV
 
     public static class RankingViewHolder extends RecyclerView.ViewHolder {
         ImageView profileImageView;
-        TextView nameTextView, reportCountTextView;
+        TextView nameTextView, reportCountTextView, rankTextView;
+
         public RankingViewHolder(View itemView) {
             super(itemView);
+            rankTextView = itemView.findViewById(R.id.tvRank);
             nameTextView = itemView.findViewById(R.id.tvStudentName);
             reportCountTextView = itemView.findViewById(R.id.tvReportCount);
             profileImageView = itemView.findViewById(R.id.imgProfile);

@@ -46,8 +46,16 @@ dependencies {
     // Google Sign-In and Play Services
     implementation(libs.play.services.auth.v2000)
 
-    // MPAndroidChart for charting
+    dependencies {
+        // Retrofit for making API calls
+        implementation(libs.retrofit)
+        implementation(libs.converter.gson)
 
+        // Picasso for image loading
+        implementation(libs.squareup.picasso)
+    }
+
+    // MPAndroidChart for charting
     implementation(libs.firebase.analytics)
     implementation(libs.image.labeling)
 
@@ -61,6 +69,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.activity.v170)
+    implementation(libs.generativeai)
 
     // Testing libraries
     testImplementation(libs.junit)

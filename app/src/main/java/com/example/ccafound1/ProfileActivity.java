@@ -1,5 +1,4 @@
 package com.example.ccafound1;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -28,7 +27,7 @@ import java.util.Map;
 
 public class ProfileActivity extends AppCompatActivity {
     private ActivityResultLauncher<Intent> imagePicker;
-    private EditText profName, profEmail, profContact;
+    private EditText profName, profEmail, profSection;
     private ImageView profImage;
     private Uri imageUri;
     private FirebaseUser currentUser;
@@ -47,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         profName = findViewById(R.id.profile_input_name);
         profEmail = findViewById(R.id.profile_input_email);
-        profContact = findViewById(R.id.profile_input_contact);
+        profSection = findViewById(R.id.profile_input_section);
         profImage = findViewById(R.id.image_upload);
 
         ImageView profBack = findViewById(R.id.back_btn);
@@ -87,7 +86,7 @@ public class ProfileActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
                         profName.setText(documentSnapshot.getString("name"));
-                        profContact.setText(documentSnapshot.getString("contact"));
+                        profSection.setText(documentSnapshot.getString("section"));
                         profEmail.setText(documentSnapshot.getString("email"));
 
                         String imageUrl = documentSnapshot.getString("profileImageUrl");
@@ -104,7 +103,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void updateProfile() {
         String name = profName.getText().toString().trim();
-        String contact = profContact.getText().toString().trim();
+        String section = profSection.getText().toString().trim();
         String email = profEmail.getText().toString().trim();
 
         if (name.isEmpty()) {
@@ -112,8 +111,8 @@ public class ProfileActivity extends AppCompatActivity {
             return;
         }
 
-        if (contact.isEmpty() || !isValidPhilippinePhone(contact)) {
-            profContact.setError("Invalid Philippine Contact Number");
+        if (section.isEmpty()) {
+            profSection.setError("Section cannot be empty");
             return;
         }
 
@@ -124,7 +123,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         Map<String, Object> updatedProfile = new HashMap<>();
         updatedProfile.put("name", name);
-        updatedProfile.put("contact", contact);
+        updatedProfile.put("section", section);
         updatedProfile.put("email", email);
 
         if (imageUri != null) {
@@ -153,11 +152,6 @@ public class ProfileActivity extends AppCompatActivity {
                 })
                 .addOnFailureListener(e ->
                         Toast.makeText(ProfileActivity.this, "Profile update failed: " + e.getMessage(), Toast.LENGTH_LONG).show());
-    }
-
-    private boolean isValidPhilippinePhone(String phone) {
-        String phoneRegex = "^(\\+63|0)9\\d{7,8}$";
-        return phone.matches(phoneRegex);
     }
 
     private void signOut() {

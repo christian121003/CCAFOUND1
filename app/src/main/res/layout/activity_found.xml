@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/report_item"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".FoundActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -51,7 +50,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:layout_margin="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -68,8 +67,8 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
-                        android:id="@+id/found_input_contact"
-                        android:layout_width="0dp"
+                        android:id="@+id/found_input_section"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/found_input_email"
                         android:layout_alignParentEnd="true"
@@ -80,22 +79,25 @@
                         android:autofillHints=""
                         android:background="@drawable/info_box"
                         android:ems="10"
-                        android:hint="@string/contact"
+                        android:hint="@string/section"
                         android:importantForAutofill="no"
                         android:inputType="phone"
                         android:padding="5dp"
-                        android:paddingStart="18dp"
+                        android:paddingStart="22dp"
                         android:paddingEnd="1dp"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
-                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
                     <TextView
                         android:id="@+id/found_itemtxt"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="10dp"
+                        android:foregroundGravity="center_vertical|center"
+                        android:gravity="center"
                         android:text="@string/found_item"
                         android:textColor="@color/black"
                         android:textSize="20sp"
@@ -113,8 +115,8 @@
                         android:background="@drawable/info_txt_box"
                         android:padding="5dp"
                         android:paddingStart="5dp"
-                        android:paddingEnd="7dp"
-                        android:text="@string/contact"
+                        android:paddingEnd="17dp"
+                        android:text="@string/section"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         tools:ignore="TextSizeCheck" />
@@ -133,16 +135,16 @@
                         android:background="@drawable/info_box"
                         android:ems="10"
                         android:hint="@string/dd_mm_yy"
-                        android:inputType="datetime"
                         android:padding="5dp"
                         android:paddingStart="5dp"
                         android:paddingEnd="1dp"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
-                        tools:ignore="LabelFor,TouchTargetSizeCheck" />
+                        tools:ignore="LabelFor,TextFields,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
                     <TextView
                         android:id="@+id/date_found"
-                        android:layout_width="0dp"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/found_input_category"
                         android:layout_alignParentStart="true"
@@ -150,7 +152,7 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="11dp"
                         android:layout_marginEnd="121dp"
-                        android:text="@string/date_that_you_find_the_item"
+                        android:text="@string/date_that_you_lost_your_item"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold"
@@ -158,7 +160,7 @@
 
                     <TextView
                         android:id="@+id/description_found"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/found_input_date"
                         android:layout_alignParentStart="true"
@@ -175,7 +177,7 @@
                         android:id="@+id/found_input_category"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/found_input_contact"
+                        android:layout_below="@+id/found_input_section"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="20dp"
@@ -189,11 +191,12 @@
                         android:padding="5dp"
                         android:paddingStart="5dp"
                         android:paddingEnd="1dp"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
-                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
                     <TextView
-                        android:id="@+id/catergory_found"
+                        android:id="@+id/category_found"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/contact_txt_f"
@@ -209,13 +212,13 @@
 
                     <EditText
                         android:id="@+id/found_input_name"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/found_itemtxt"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="-9dp"
                         android:layout_marginTop="30dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_marginEnd="23dp"
                         android:layout_toEndOf="@+id/name_txt_f"
                         android:autofillHints=""
                         android:background="@drawable/info_box"
@@ -225,17 +228,18 @@
                         android:padding="5dp"
                         android:paddingStart="20dp"
                         android:paddingEnd="1dp"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
-                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+                        tools:ignore="LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
                     <EditText
                         android:id="@+id/found_input_email"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/found_input_name"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="-9dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="6dp"
                         android:layout_marginEnd="24dp"
                         android:layout_toEndOf="@+id/email_txt_f"
                         android:background="@drawable/info_box"
@@ -243,10 +247,11 @@
                         android:hint="@string/email"
                         android:inputType="text|textEmailAddress"
                         android:padding="5dp"
-                        android:paddingStart="20dp"
+                        android:paddingStart="25dp"
                         android:paddingEnd="1dp"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
-                        tools:ignore="Autofill,LabelFor,DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+                        tools:ignore="Autofill,DuplicateSpeakableTextCheck,LabelFor,TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
                     <TextView
                         android:id="@+id/email_txt_f"
@@ -255,7 +260,7 @@
                         android:layout_below="@+id/name_txt_f"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="6dp"
                         android:background="@drawable/info_txt_box"
                         android:padding="5dp"
                         android:paddingStart="5dp"
@@ -275,7 +280,7 @@
                         android:background="@drawable/info_txt_box"
                         android:padding="5dp"
                         android:paddingStart="5dp"
-                        android:paddingEnd="30dp"
+                        android:paddingEnd="27dp"
                         android:text="@string/name"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
@@ -311,29 +316,13 @@
                         android:inputType="textMultiLine"
                         android:paddingStart="5dp"
                         android:paddingEnd="5dp"
+                        android:textColor="@color/black"
                         android:textSize="14sp"
-                        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-                    <Button
-                        android:id="@+id/found_select_btn"
-                        android:layout_width="0dp"
-                        android:layout_height="35dp"
-                        android:layout_below="@+id/found_image_view"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="23dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_toStartOf="@+id/found_description"
-                        android:background="@drawable/button"
-                        android:backgroundTint="@color/dark_grey"
-                        android:text="@string/select_image"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        tools:ignore="LabelFor,SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 
                     <Button
                         android:id="@+id/found_submit_btn"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_below="@+id/found_description"
                         android:layout_alignParentStart="true"
@@ -342,21 +331,22 @@
                         android:layout_marginTop="46dp"
                         android:layout_marginEnd="100dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/button"
+                        android:background="@color/dark_green"
                         android:backgroundTint="@color/dark_grey"
+                        android:padding="5dp"
                         android:text="@string/submit"
                         android:textColor="@color/white"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="TouchTargetSizeCheck,UnknownIdInLayout,VisualLintButtonSize" />
 
                     <ProgressBar
                         android:id="@+id/loading_progress_found"
-                        style="?android:attr/progressBarStyleLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:indeterminate="true"
-                        android:visibility="gone" />
-
+                        android:visibility="gone"
+                        style="?android:attr/progressBarStyleLarge"
+                        android:indeterminate="true" />
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>

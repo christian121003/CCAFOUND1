@@ -67,7 +67,7 @@
                         android:layout_height="wrap_content" />
 
                     <EditText
-                        android:id="@+id/report_input_contact"
+                        android:id="@+id/report_input_section"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/report_input_email"
@@ -79,7 +79,7 @@
                         android:autofillHints=""
                         android:background="@drawable/info_box"
                         android:ems="10"
-                        android:hint="@string/contact"
+                        android:hint="@string/section"
                         android:importantForAutofill="no"
                         android:inputType="phone"
                         android:padding="5dp"
@@ -115,8 +115,8 @@
                         android:background="@drawable/info_txt_box"
                         android:padding="5dp"
                         android:paddingStart="5dp"
-                        android:paddingEnd="7dp"
-                        android:text="@string/contact"
+                        android:paddingEnd="17dp"
+                        android:text="@string/section"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         tools:ignore="TextSizeCheck" />
@@ -177,7 +177,7 @@
                         android:id="@+id/report_input_category"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/report_input_contact"
+                        android:layout_below="@+id/report_input_section"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="20dp"
@@ -218,7 +218,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="-6dp"
                         android:layout_marginTop="30dp"
-                        android:layout_marginEnd="23dp"
+                        android:layout_marginEnd="24dp"
                         android:layout_toEndOf="@+id/name_txt_r"
                         android:autofillHints=""
                         android:background="@drawable/info_box"
@@ -239,7 +239,7 @@
                         android:layout_below="@+id/report_input_name"
                         android:layout_alignParentEnd="true"
                         android:layout_marginStart="-9dp"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="24dp"
                         android:layout_toEndOf="@+id/email_txt_r"
                         android:background="@drawable/info_box"
@@ -260,7 +260,7 @@
                         android:layout_below="@+id/name_txt_r"
                         android:layout_alignParentStart="true"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="10dp"
                         android:background="@drawable/info_txt_box"
                         android:padding="5dp"
                         android:paddingStart="5dp"
@@ -280,7 +280,7 @@
                         android:background="@drawable/info_txt_box"
                         android:padding="5dp"
                         android:paddingStart="5dp"
-                        android:paddingEnd="30dp"
+                        android:paddingEnd="27dp"
                         android:text="@string/name"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
@@ -319,23 +319,6 @@
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         tools:ignore="LabelFor,SpeakableTextPresentCheck,VisualLintTextFieldSize" />
-
-                    <Button
-                        android:id="@+id/report_upload_btn"
-                        android:layout_width="0dp"
-                        android:layout_height="35dp"
-                        android:layout_below="@+id/report_image_view"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="23dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginEnd="7dp"
-                        android:layout_toStartOf="@+id/report_description"
-                        android:background="@drawable/button"
-                        android:backgroundTint="@color/dark_grey"
-                        android:text="@string/select_image"
-                        android:textColor="@color/white"
-                        android:textSize="12sp"
-                        tools:ignore="TouchTargetSizeCheck" />
 
                     <Button
                         android:id="@+id/report_submit_btn"
