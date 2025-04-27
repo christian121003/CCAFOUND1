@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="found_submit_btn" type="id" />
+    <item name="found_image_view" type="id" />
+    <item name="found_upload_btn" type="id" />
+    <item name="found_description" type="id" />
+    <item name="loading_progress_found" type="id" />
+    <item name="description_found" type="id" />
+    <item name="found_input_contact" type="id" />
+    <item name="found_input_email" type="id" />
+    <item name="contact_txt_f" type="id" />
+    <item name="found_itemtxt" type="id" />
+    <item name="email_txt_f" type="id" />
+    <item name="found_input_date" type="id" />
+    <item name="date_found" type="id" />
+    <item name="found_input_category" type="id" />
+    <item name="category_found" type="id" />
+    <item name="found_input_name" type="id" />
+    <item name="name_txt_f" type="id" />
+</resources>
