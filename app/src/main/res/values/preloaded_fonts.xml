@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/adlam_display</item>
+        <item>@font/advent_pro_black</item>
+        <item>@font/alfa_slab_one</item>
+        <item>@font/alumni_sans_inline_one</item>
+        <item>@font/archivo_bold</item>
+        <item>@font/baloo</item>
+        <item>@font/candal</item>
+        <item>@font/inter</item>
+        <item>@font/inter_bold</item>
+        <item>@font/inter_extrabold</item>
+        <item>@font/inter_thin</item>
+    </array>
+</resources>

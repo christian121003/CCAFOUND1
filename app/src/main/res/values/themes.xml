@@ -1,6 +1,34 @@
 <resources>
-    <!-- Base application theme. -->
-    <style
-        name="Base.Theme.CCAFOUND1" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Base application theme -->
+    <style name="Theme.CCAFOUND1" parent="Base.Theme.CCAFOUND1" />
+    <!-- Base application theme for AppCompat -->
+    <style name="Base.Theme.CCAFOUND1" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">@color/dark_green</item>
+        <item name="colorPrimaryVariant">@color/med_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary colors -->
+        <item name="colorSecondary">@color/gold</item>
+        <item name="colorSecondaryVariant">@color/med_green</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/light_pink</item>
+        <item name="colorSurface">@color/white</item>
+
+        <!-- Mandatory Material Components attributes -->
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="buttonStyle">@style/Widget.MaterialComponents.Button</item>
+
+        <!-- Text appearance -->
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+    </style>
+
+    <!-- MaterialButton style -->
+    <style name="Widget.CCAFOUND1.Button" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/dark_green</item>
+        <item name="cornerRadius">12dp</item>
     </style>
 </resources>

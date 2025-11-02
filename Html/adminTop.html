@@ -3,98 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CCAFound Dashboard</title>
+  <title>CCAFound Dashboard - Top Users</title>
+
+  <!-- Bootstrap & Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
   <link href="../CSS/adminTop.css" rel="stylesheet" />
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <div>
-        <a class="btn" onclick="toggleNotificationBar()">
-          <img src="../img/notification.png" alt="Notif-Bar" style="width: 40px;" />
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <button class="btn text-white d-md-none me-2" id="toggleSidebar">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <button class="notification-btn position-relative me-3" aria-label="Notifications">
+          <i class="fas fa-bell fa-lg"></i>
+          <span class="notification-badge">3</span>
+        </button>
+
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <i class="fas fa-trophy me-2"></i> CCAFound
         </a>
-        <div id="notificationBar" class="notification-bar" style="display: none;">
-          <div class="notification-item" id="notification1">
-            <img src="../img/iphon.jpeg" alt="Item" />
-            <div class="notification-content">
-              <strong>User found an item:</strong><br />
-              Name: Mang Inasal<br />
-              Email: minasal00-000@cca.edu.ph<br />
-              Contact #: 0000-0000-000
-            </div>
-            <button class="notification-button" onclick="removeNotification('notification1')">Accept</button>
-          </div>
-        </div>
       </div>
 
-      <a class="navbar-brand"><h1>CCAFound</h1></a>
-
-      <div class="d-flex ms-auto align-items-center">
-        <img src="../img/user (1).png" alt="User Icon" class="rectangle" style="width: 40px; margin-right: 30px; background-color: white; padding: 5px;" />
-        <div class="dropdown">
-          <span class="me-2 text-white">Mang Kanor Delos Reyes</span>
-          <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+      <div class="d-flex align-items-center">
+        <img src="../img/default.png" alt="User Profile" class="rounded-circle me-2 user-icon" />
+        <div class="dropdown user-dropdown">
+          <button class="btn dropdown-toggle text-white" data-bs-toggle="dropdown">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Logo and Header -->
-  <div class="container-fluid bg-white mb-3">
-    <img src="../img/CCALogo (2).png" alt="CCA Logo" class="me-2" style="height: 80px;" />
-    <h3 class="d-inline-block header-title">City College of Angeles</h3>
-  </div>
-
   <!-- Main Layout -->
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-top:80px;">
     <div class="row">
       <!-- Sidebar -->
-      <div class="col-md-3 sidebar" style="padding: 10px;">
-        <a href="adminRecordsLost.html" style="padding: 20px;">
-          <img src="../img/folder.png" alt="Folder" style="height: 40px;" />
-          <h4 style="font-weight: bold;">Records of Lost and Found</h4>
-        </a>
-
-        <a href="adminStatistic.html" style="padding: 20px;">
-          <img src="../img/analysis.png" alt="Statistics" style="height: 40px;" />
-          <h4 style="font-weight: bold;">Statistic Reports Lost and Found</h4>
-        </a>
-
-        <a href="adminFound.html" style="padding: 20px;">
-          <img src="../img/lost-and-found.png" alt="Found Items" style="height: 40px;" />
-          <h4 style="font-weight: bold;">Found Items</h4>
-        </a>
-
-        <a href="adminTop.html" style="padding: 20px;">
-          <img src="../img/Top.png" alt="Status" style="height: 40px;" />
-          <h4 style="font-weight: bold;">Top Student</h4>
-        </a>
-      </div>
+      <aside class="sidebar" id="sidebar">
+        <a href="adminRecordsLost.html"><i class="fas fa-folder"></i> <span>Records of Lost and Found</span></a>
+        <a href="adminStatistic.html"><i class="fas fa-chart-bar"></i> <span>Statistic Reports</span></a>
+        <a href="adminFound.html"><i class="fas fa-search"></i> <span>Found Items</span></a>
+        <a href="adminTop.html" class="active"><i class="fas fa-trophy"></i> <span>Top Users</span></a>
+      </aside>
 
       <!-- Main Content -->
-      <div class="col-md-9" style="background-color: #dcdcdc;">
-        <div class="container mt-4">
-          <h3 class="text-center fw-bold" style="color: black;">Top Students Found Items</h3>
-          <div id="loader" class="text-center text-white mt-3">Loading...</div>
-          <div class="row justify-content-center" id="topReporters">
-            <!-- Top reporters will be inserted here -->
+      <div class="dashboard-content flex-grow-1">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h1 class="page-title"><i class="fas fa-trophy"></i> Top Users - Found Items</h1>
+          <button class="export-btn btn btn-outline-primary" onclick="exportTopUsers()">
+            <i class="fas fa-download"></i> Export List
+          </button>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading-spinner text-center my-5" id="loadingSpinner">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
           </div>
+          <p class="mt-2">Fetching top users...</p>
+        </div>
+
+        <!-- Top User Cards -->
+        <div id="topUserContainer" class="row d-none"></div>
+
+        <!-- Leaderboard Chart -->
+        <div class="chart-container mt-5">
+          <h5 class="chart-title">Top 5 Users Reporters (This Month)</h5>
+          <canvas id="topStudentsChart" height="300"></canvas>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Firebase & JavaScript -->
-   <script src="/JavaScript/notif.js"></script>
-  <script type="module" src="../JavaScript/topRank.js"></script>
-
+  <!-- Bootstrap & ChartJS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </body>
+
+ <!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
+
+<!--JavaScript-->
+<script src="../JavaScript/authGuard.js"></script>
+<script src="../JavaScript/navbarProfile.js"></script>
+<script src="../JavaScript/adminTop.js"></script>
 </html>
